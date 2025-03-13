@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holi Greeting Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://im.indiatimes.in/content/2024/Mar/Holi-wishes-for-girlfriend-and-boyfriend_65fee376e933b.jpg?w=1200&h=900&cc=1&webp=1&q=75') no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+        .hidden-message {
+            display: none;
+            padding: 15px;
+            margin-top: 10px;
+            background: #ff4081;
+            color: white;
+            border-radius: 8px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .reveal-button {
+            background: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .reveal-button:hover {
+            background: #e65100;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Happy Holi, Bhuumiiiii💛</h2>
+        <p>Tap the button to reveal your special message!</p>
+        <button class="reveal-button" onclick="showMessage()">Reveal Message</button>
+        <div class="hidden-message" id="message">
+            Holi ke is rangin tyohaar par, bas itna kehna hai—tumhari har baat ek alag hi rang bhar deti hai zindagi me. Shayad tumhe ehsaas na ho, par tumhari hasi kisi gulal se kam nahi, jo aas paas khushbu phaila deti hai. Is Holi, umeed hai tumhari zindagi bhi khushiyon ke rangeen chhant se bhar jaye. Holi ki dher saari shubhkamnayein! 🎨🌸😊💛
+        </div>
+    </div>
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+            let ytContainer = document.getElementById("ytContainer");
+            ytContainer.innerHTML = '<iframe width="0" height="0" src="https://www.youtube.com/embed/0-2d1Kq2Ejk?autoplay=1&mute=0" allow="autoplay"></iframe>';
+        }
+    </script>
+    <div id="ytContainer"></div>
+</body>
+</html>
