@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holi Wishes for Bhuumiiiii💛</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffefd5;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            color: #d63384;
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+        .message {
+            display: none;
+            font-size: 1.5em;
+            margin: 20px;
+            color: #6a0572;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 20px;
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #ff6347;
+        }
+        .color-splash {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 0, 0, 0.7);
+            border-radius: 50%;
+            animation: splash 1.5s infinite;
+        }
+        @keyframes splash {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Holi, Bhuumiiiii💛!</h1>
+    <button class="button" onclick="showMessage()">Click to Reveal Your Message</button>
+    <div class="message" id="message">
+        "Holi ke is rangin tyohaar par, bas itna kehna hai—tumhari har baat ek alag hi rang bhar deti hai zindagi me. Shayad tumhe ehsaas na ho, par tumhari hasi kisi gulal se kam nahi, jo aas paas khushbu phaila deti hai. Is Holi, umeed hai tumhari zindagi bhi khushiyon ke rangeen chhant se bhar jaye. Holi ki dher saari shubhkamnayein! 🎨🌸😊💛"
+    </div>
+    
+    <audio id="holiMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-buddy.mp3" type="audio/mp3">
+    </audio>
+    
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+            document.getElementById("holiMusic").play();
+            createColorSplashes();
+        }
+        
+        function createColorSplashes() {
+            for (let i = 0; i < 20; i++) {
+                let splash = document.createElement("div");
+                splash.classList.add("color-splash");
+                splash.style.backgroundColor = `rgb(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255})`;
+                splash.style.left = Math.random() * window.innerWidth + "px";
+                splash.style.top = Math.random() * window.innerHeight + "px";
+                document.body.appendChild(splash);
+                setTimeout(() => splash.remove(), 1500);
+            }
+        }
+    </script>
+</body>
+</html>
